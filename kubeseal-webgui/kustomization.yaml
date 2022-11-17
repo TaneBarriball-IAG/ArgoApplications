@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+- name: kubeseal-webgui
+  namespace: kubeseal-webgui
+  repo: https://jaydee94.github.io/kubeseal-webgui/
+  version: x.x.x
+  releaseName: kubeseal-webgui
+  valuesFile: values.yaml
+
+resources:
+- kubeseal-webgui-dns-cname.yaml

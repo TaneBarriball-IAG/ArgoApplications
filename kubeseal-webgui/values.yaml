@@ -1,0 +1,42 @@
+ingress:
+  enabled: true
+  hostname: "kubeseal.sandbox1.dplatk8s.iagcloud.net"
+  tls:
+    enabled: true
+    secretName: "kubeseal-tls"
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: traefik
+    # traefik.frontend.rule.type: PathPrefix
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+sealedSecrets:
+  autoFetchCert: false
+  cert: |
+    -----BEGIN CERTIFICATE-----
+    MIIEzDCCArSgAwIBAgIQW7NXdZsNCBJzQqCD+jkxUjANBgkqhkiG9w0BAQsFADAA
+    MB4XDTIyMTExNTA2MjQ0M1oXDTMyMTExMjA2MjQ0M1owADCCAiIwDQYJKoZIhvcN
+    AQEBBQADggIPADCCAgoCggIBALhG2WFS05khBxHAKc+akout8T8gOy2Arn7q4EfQ
+    tMwLy2xIMEvzW8x2xz7TnEGloTaGPzlqbptqjtJjmoAT0C1rm3dU5x+jJaN3WRu5
+    vIKk5eF7GHBc/+aFTJ7KeP1VmwGTZM1MakunF1zV3AidxycBqHhf9d9cxX7no4Vt
+    W6oYAJpEPxJdGYq0yHB/uNLF+rP94EWjSGV2q1ie65iHnMZAOXKeR0uiO+Yjxc7H
+    eL8HsXDN3L5AGSSciMLxXj93+kfrOMV3OyTAUo1XxBEXPU/cIp18q+Ocb1USAWxA
+    tlMie/akdaFPmyvSlT26akPPC5YtEI0Zyc3+GNAGdM7NiQ5Lu3n8TSUENHJjGs4T
+    X7p+IdIaaCkpnWDBbOLJOTUXdHy6OrulvrTD7bg3lxsq8OUsejgvVYgrDSDI78Tr
+    XwYbS4Pk5hVTURmkix1KXAdrbJPhZGmVyBlKIWz4Xk8Gae68eKJDFi8LW0z1POzn
+    FLlMocKYECG5YMzMJV/c0hjYBuogeAVYFqEtJC4vfqgYC7v0Xbak5I0SIOkBvTlv
+    xKU4L151CTV2IxH6u3NdGzEPfujPpwoPdw4GHS9tm5Tj2Bnq+6bsAGXq5MfoWkoy
+    6g1/Mwa2/InqqEpVehXg5vCIlF/7JMWPpEk82UH4BKLcnBGBTGsGJyobM31p2BnO
+    hsubAgMBAAGjQjBAMA4GA1UdDwEB/wQEAwIAATAPBgNVHRMBAf8EBTADAQH/MB0G
+    A1UdDgQWBBQVB0wGhlXe1hD6sUflSBtmFY46AjANBgkqhkiG9w0BAQsFAAOCAgEA
+    eg1MJMw6wepV7IoqrIBmIQI+E2mQFMNgQMRfcORiI6kbxGnSJpc2sKp/+9I7zxq/
+    BNWx5w8i7ysA5p5jWUMBvWSzcaTpCapYMU/4CFdsgaA2y5m5Bn//5mzq2buiA92f
+    kbpvOrzujySglFfibahhkQMs6rIHu81cIVtS3yu4hlWGVo2pSzyBkbtFZldwQq4B
+    jcqh6GF+5zA/cflZTJxFsyubZ0jiQAytUlyfd63tE1mV/JVVGpg/bqRpYH2OTmD1
+    zUon2u6IJ9KnmRh6nA6JUea5MuKeRa9hyS0gcBHDbSIwNatachGsttVBPwKDxrNl
+    k3Fv4lws/iO7Ex+9vvAzG1KT4ik5av8NUuDU4xgjDlcdvGsPLjss1b+by+mmq0Oz
+    VZan0Nt2QCEE2KpIZnWU9eRtA39zguQE/Hi7u0fM6W/j5N614ZMweovHS5T7lHgj
+    /TxbAyTfiJw3oTscaWHZ/0iCNw73y0YRoKaPpxzpqQ49lqeOLcj4rmwMfi7MtlH7
+    +0ePlKEhpumev4xgWsHNly7C1LBPYlunfiOi6N2IvIZEtXbhNuwGJcsBqRtzxOHY
+    988XoSiHE0zwaKTDmbWyLBdWcN6NEM55ySKF0qCabE/faL6jacSz7ZA2hthDMiyL
+    dCqUbMJeoeqLr/rjK/TjdkDheHfDpPh+3aEdP1KO/wk=
+    -----END CERTIFICATE-----
